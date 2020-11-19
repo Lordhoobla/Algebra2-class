@@ -2,8 +2,10 @@ import java.lang.Math;
 import java.util.ArrayList;
 package m;
 //m.Algebra2;
-public class Algebra2 extends Math{
-  //tests if the number is a prime number
+public class Algebra2{
+  /*
+   *checks if the int given is a prime number
+  */
   public boolean isPrime(int n){
     if(n<=1){
       return false;}
@@ -11,7 +13,12 @@ public class Algebra2 extends Math{
       if(n%i==0){return false;}
     }
     return true;}
-   //given a number, this will return two numbers in array form that would follow a simplified equation pattern (EX: int[0]√int[1])
+   /*simplifies square roots of a number given the square root
+    *xy will be the number that is being simplified
+    *this will return an integer array
+    *int[0] being what it's multiplied by
+    *int[1] being what the square root is
+   */
    public int[] rsqrt(double xy){
     int x=(int)xy;
     ArrayList<Integer> figure=new ArrayList<Integer>();
@@ -40,7 +47,9 @@ public class Algebra2 extends Math{
     int[] xz={ans1,ans2}; 
     return xz;
   }
-  //this will factor a 3 part equation (EX: 8,13,-6 will return 2, -3)
+  /*This will factor a three part equation (EX: ax^2+bx+c)
+   *(EX: 8,13,-6 will return 2, -3)
+  */
   public double[] factorx(double x,double y,double z){
     double a1=x,b1=y,c1=z;
     a1*=c1;
@@ -71,5 +80,15 @@ public class Algebra2 extends Math{
     delX=Math.abs(xK-xPre);
     xPre=xK;}
     return xK;
+  }
+  /*given a two coordinates, this finds 'a' in the quadratic formula
+   *h is h
+   *k is k
+   *x_one is the x-coordinate of the point
+   *y_one is the y-coordinate of the point
+   *this will return a double that will correspond to the following: "y=<vap_solve()>(x-h)^2+k"
+  */
+  public double vap_solve(double h,double k,double x_one,double y_one) {
+    return k-(y_one/Math.pow(x_one-h,2));
   }
 }
