@@ -150,7 +150,6 @@ public class Algebra2{
    *returns a double array that consists all of the numbers after going through the synthetic division equation
   */
   public double[] sdiv(double[] num,double y){
-    double[] x=new double[num.length-1];
     for(int i=1;i<num.length;i++){num[i]+=num[i-1]*y;}
     return num;
   }
