@@ -61,4 +61,15 @@ public class Algebra2 extends Math{
     double[] d={x_one,x_two};
     return d;
   }
+  /*calculates the Nth root of A
+   *A being the number to be rooted
+   *N being the exponent of the root
+  */
+  public static double nthRoot(double A,int N){
+    double xPre=Math.random()%10,eps=0.001,delX=Integer.MAX_VALUE,xK=0;
+    while(delX>eps){xK=((N-1.0)*xPre+(double)A/Math.pow(xPre,N-1))/(double)N;
+    delX=Math.abs(xK-xPre);
+    xPre=xK;}
+    return xK;
+  }
 }
