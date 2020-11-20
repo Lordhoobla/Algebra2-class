@@ -68,17 +68,14 @@ public class Algebra2{
     double[] d={x_one,x_two};
     return d;
   }
-  /*calculates the Nth root of A
-   *A being the number to be rooted
-   *N being the exponent of the root
+  /*calculates the Nth root of a
+   *a being the number to be rooted
+   *n being the exponent of the root
   */
-  public static double nthRoot(double A,int N){
-    double xPre=Math.random()%10,eps=0.001,delX=Integer.MAX_VALUE,xK=0;
-    while(delX>eps){xK=((N-1.0)*xPre+(double)A/Math.pow(xPre,N-1))/(double)N;
-    delX=Math.abs(xK-xPre);
-    xPre=xK;}
-    return xK;
-  }
+  public static double nthroot(double a,double n){
+    if(n<1){return 0.0;}a=Math.abs(a);double index=1000000000,ret=0;int count=0;
+    while(Math.pow(ret,n)!=a){ret+=index;if(Math.pow(ret,n)>a){ret-=index;index/=10;if(index<.5){count++;}}if(count==15){break;}}
+    return ret;}
   /*given a two coordinates, this finds 'a' in the quadratic formula
    *h is h
    *k is k
