@@ -145,9 +145,20 @@ public class Algebra2{
    *num is the array of all of the values
    *y is what it's being divided by
    *returns a double array that consists all of the numbers after going through the synthetic division equation
+   *NOTE: this will return a final value that is supposed to be the fraction value after the equation
   */
   public double[] sdiv(double[] num,double y){
     for(int i=1;i<num.length;i++){num[i]+=num[i-1]*y;}
     return num;
+  }
+  /*Completes a modular division formula
+   *eq is the array of all of the values
+   *co is the coefficient
+   *con is the constant value, make sure it's known whether or not it's a negative
+   *returns a double array that consists all of the numbers after going through the modular division equation
+   *NOTE: this will return a final value that is supposed to be the fraction value after the equation
+  */
+  public double[] moddiv(double co,double con,double[] eq){
+    return sdiv(eq,(-con/co));
   }
 }
