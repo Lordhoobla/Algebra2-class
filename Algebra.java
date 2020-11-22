@@ -1,8 +1,8 @@
 import java.lang.Math;
 import java.util.ArrayList;
 package m;
-//m.Algebra2;
-public class Algebra2{
+//m.Algebra;
+public class Algebra{
   /*
    *checks if the int given is a prime number
   */
