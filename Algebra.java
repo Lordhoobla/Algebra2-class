@@ -6,13 +6,11 @@ public class Algebra{
   /*
    *checks if the int given is a prime number
   */
-  public boolean isPrime(int n){
-    if(n<=1){
-      return false;}
-    for(int i=2;i<Math.sqrt(n);i++){
-      if(n%i==0){return false;}
-    }
-    return true;}
+  public static boolean isPrime(int num){
+		   if(num<=1){return false;}
+		   for(int i=2; i <= Math.sqrt(num); i++) {
+		       if(num%i==0){return false;}
+		   }return true;}
    /*simplifies square roots of a number given the square root
     *xy will be the number that is being simplified
     *this will return an integer array
