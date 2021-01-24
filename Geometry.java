@@ -7,7 +7,7 @@ public class Geometry{
      *x2/y2 are the coordinates of the second point
      *returns a double array that contains the x and y coordinate of the midpoint [x,y]
     */
-    public double[] midpoint(double x1,double y1,double x2,double y2){
+    public static double[] midpoint(double x1,double y1,double x2,double y2){
       double[] x={((x1+x2)/2),((y1+y2)/2)};
       return x;
     }
@@ -16,7 +16,7 @@ public class Geometry{
      *x2/y2 are the coordinates of the second point
      *returns a double that is the distance
     */
-    public double distance(double x1,double y1,double x2,double y2){
+    public static double distance(double x1,double y1,double x2,double y2){
       return Math.hypot(x2-x1,y2-y1);
     }
     /*completes a CAH method
@@ -27,7 +27,7 @@ public class Geometry{
      *x is the type of calculation(-1 finds adjacent, 0 finds hypotenuse, 1 is cosine factor)
      *returns the missing number
     */
-    public double cah(double c,double a,double h,int x){
+    public static double cah(double c,double a,double h,int x){
         switch(x){
             case -1:return h*Math.cos(c);break;
             case 0:return a/Math.cos(c);break;
@@ -42,7 +42,7 @@ public class Geometry{
      *x is the type of calculation(-1 finds adjacent, 0 finds opposite, 1 is tangent factor)
      *returns the missing number
     */
-    public double toa(double t,double o,double a,int x){
+    public static double toa(double t,double o,double a,int x){
         switch(x){
             case -1:return o*Math.tan(t);break;
             case 0:return a/Math.tan(t);break;
@@ -57,7 +57,7 @@ public class Geometry{
      *x is the type of calculation(-1 finds opposite, 0 finds hypotenuse, 1 is sine factor)
      *returns the missing number
     */
-    public double soh(double s,double o,double h,int x){
+    public static double soh(double s,double o,double h,int x){
         switch(x){
             case -1:return h*Math.sin(s);break;
             case 0:return o/Math.sin(s);break;
