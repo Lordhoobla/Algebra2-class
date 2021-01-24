@@ -23,7 +23,7 @@ public class Algebra{
     *int[0] being what it's multiplied by
     *int[1] being what the square root is
    */
-   public int[] rsqrt(double xy){
+   public static int[] rsqrt(double xy){
     int x=(int)xy;
     ArrayList<Integer> figure=new ArrayList<Integer>();
     ArrayList<Integer> figure2=new ArrayList<Integer>();
@@ -52,7 +52,7 @@ public class Algebra{
   /**This will factor a three part equation (EX: ax^2+bx+c)
    *(EX: 8,13,-6 will return 2, -3)
   */
-  public double[] factorx(double x,double y,double z){
+  public static double[] factorx(double x,double y,double z){
     double a1=x,b1=y,c1=z;
     a1*=c1;
     for(int i=0;i!=a1/2;i++){
@@ -87,7 +87,7 @@ public class Algebra{
    *y_one is the y-coordinate of the point
    *this will return a double that will correspond to the following: "y=<vap_solve()>(x-h)^2+k"
   */
-  public double vap(double h,double k,double x_one,double y_one) {
+  public static double vap(double h,double k,double x_one,double y_one) {
     return k-(y_one/Math.pow(x_one-h,2));
   }
   /*generates two doubles that correlate to a standard form equation
@@ -95,7 +95,7 @@ public class Algebra{
    *c1 being c in the standard form equation
    *returns a double array that consists of [k,h]
   */
-  public double[] stv(double b1,double c1){
+  public static double[] stv(double b1,double c1){
     double[] x={(-1*(Math.pow(b1/2,2)+c1)),(-b1/2)};
     return x;
   }
@@ -105,7 +105,7 @@ public class Algebra{
    *k is k
    *returns a double array that consists of [b,c] (a is the same in either equation)
   */
-  public double[] vts(double a,double h,double k){
+  public static double[] vts(double a,double h,double k){
     double[] x={(-2*a1*h),(a*Math.pow(h,2)+k)};
     return x;
   }
@@ -117,7 +117,7 @@ public class Algebra{
    *y2 is the y-coordinate of the second coordinate
    *returns a double array that consists of [a,k] (h is the axis-of-symmetry)
   */
-  public double[] aos(double aos,double x1,double y1,double x2,double y2){
+  public static double[] aos(double aos,double x1,double y1,double x2,double y2){
     double[] x={((y2-y1)/(Math.pow(x2-aos,2)-Math.pow(x1-aos,2))),(y1-((y2-y1)/(Math.pow(x2-aos,2)-Math.pow(x1-aos,2)))*Math.pow(x1-aos,2))};
     return x;
   }
@@ -130,7 +130,7 @@ public class Algebra{
    *if returns [2]=0, the equation was stopped because the square root could not complete with an integer and returns the following: [0]√[1]
    *if returns [2]=-1, the equation was stopped because the square root could not complete with a positive number and returns the following: [0]i√[1]
   */
-  public double[] fbx(double a,double b,double c){
+  public static double[] fbx(double a,double b,double c){
     if((Math.pow(b,2)+(-4*a*c))>0&&Math.sqrt(Math.pow(b,2)+(-4*a*c))==((int)Math.sqrt(Math.pow(b,2)+(-4*a*c)))){
       double[] x={((-b+(Math.sqrt(Math.pow(b,2)+(-4*a*c))))/(2*a)),((-b-(Math.sqrt(Math.pow(b,2)+(-4*a*c))))/(2*a)),1};
       return x;
@@ -151,7 +151,7 @@ public class Algebra{
    *returns a double array that consists all of the numbers after going through the synthetic division equation
    *NOTE: this will return a final value that is supposed to be the fraction value after the equation
   */
-  public double[] sdiv(double[] num,double y){
+  public static double[] sdiv(double[] num,double y){
     for(int i=1;i<num.length;i++){num[i]+=num[i-1]*y;}
     return num;
   }
@@ -162,7 +162,7 @@ public class Algebra{
    *returns a double array that consists all of the numbers after going through the modular division equation
    *NOTE: this will return a final value that is supposed to be the fraction value after the equation
   */
-  public double[] moddiv(double co,double con,double[] eq){
+  public static double[] moddiv(double co,double con,double[] eq){
     return sdiv(eq,(-con/co));
   }
   /**Simplifies the nth root of a number
@@ -173,7 +173,7 @@ public class Algebra{
    *int[0] being the coefficient of the simplified root
    *int[1] being the number that is rooted after being simplified
   */
-  public int[] rnthRoot(int co,int n,int x){
+  public static int[] rnthRoot(int co,int n,int x){
     ArrayList<Integer> figure=new ArrayList<Integer>();ArrayList<Integer> figure2=new ArrayList<Integer>();ArrayList<Integer> figure3=new ArrayList<Integer>();
     int x3=1;if(n!=1&&n%2!=0&&(x<0||co<0)){x3=-1;}
     int y=x;x=Math.abs(x);int x2=0;figure.add(x);x=x2=0;
